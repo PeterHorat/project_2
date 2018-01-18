@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 
 class ShowList extends Component {
-    render() {
+    getDefaultProps(){
+        return {
+            names: []
+        }
+    }
+    render(){
         var listItems = this.props.names.map(function(friend){
             return <li> {friend} </li>;
         });
