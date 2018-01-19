@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ShowList from './ShowList.js';
 import AddFriend from './AddFriend.js';
-import FriendsContainer from "./FriendsContainer";
+import FriendsContainer from './FriendsContainer.js';
 
 class App extends Component {
     constructor(props, context) {
@@ -50,6 +50,7 @@ class App extends Component {
                 <h3> Name: {this.state.name} </h3>
                 <AddFriend addNew={this.addFriend} />
                 <ShowList names={this.state.friends} />
+                <FriendsContainer container={this.friendsContainer} />
 
 
             </div>
