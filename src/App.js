@@ -16,6 +16,7 @@ class App extends Component {
                 'Murphy Randall',
                 'Merrick Christensen'
             ],
+            emails: []
         };
         this.handleChange = this.handleChange.bind(this);
         this.addFriend = this.addFriend.bind(this);

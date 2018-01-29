@@ -12,6 +12,7 @@ class FriendsContainer extends Component{
                 'Murphy Randall',
                 'Merrick Christensen'
             ],
+            emails: []
         };
         this.addFriend = this.addFriend.bind(this);
     };
@@ -24,14 +25,16 @@ class FriendsContainer extends Component{
                 'Murphy Randall',
                 'Merrick Christensen'
             ],
+            emails: []
         };
-        this.addFriend = this.addFriend.bind(this);
     }
     addFriend(friend){
         this.setState({
             friends: this.state.friends.concat([friend])
         });
     }
+
+
     render (){
         return (
             <div>

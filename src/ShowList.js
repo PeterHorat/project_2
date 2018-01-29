@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
+import ItemListener from './ItemListener.js';
 
 class ShowList extends Component {
-    getDefaultProps(){
-        return {
+
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
             names: []
-        }
+        };
     }
-    render(){
-        var listItems = this.props.names.map(function(friend){
+
+    render() {
+        var listItems = this.props.names.map(function (friend) {
             return <li> {friend} </li>;
         });
         return (
@@ -16,9 +20,9 @@ class ShowList extends Component {
                 <ul>
                     {listItems}
                 </ul>
+                <ItemListener/>
             </div>
         )
     }
 }
-
 export default ShowList;
