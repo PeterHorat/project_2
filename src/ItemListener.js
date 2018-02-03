@@ -11,7 +11,10 @@ class ItemLister extends React.Component {
                 "a3": {"animal": "kangaroo", "name": "joey"}
 
             },
-            test: ''};
+            test: {
+                "b1": {"title": "Enter Sandman", "singer": "Metallica"}
+            }
+        };
 
         this.componentDidMount = this.componentDidMount.bind(this);
         this.logTest = this.logTest.bind(this);
@@ -43,30 +46,40 @@ class ItemLister extends React.Component {
         return response.json();
     }
 
-    setTest(result){
+    setTest(result) {
         this.setState({
             test: this.state.test.concat(result)
         });
     }
 
 
-    componentDidMount() {
-        fetch('animals.json') // 1
-            .then(this.validateResponse) // 2
+        componentDidMount()
+        {
+            fetch('http://localhost:8080/SampleApp/api/users/track', {
+                mode: 'cors' // 'cors' by default
+            })
+            /*fetch('animals.json')*/ // 1
+            /*.then(this.validateResponse) // 2
             .then(this.readResponseAsJSON) // 3
             .then(this.logResult)
             .then(this.setTest)//
             .then(this.logTest)//// 4
-            .catch(this.logError)
-    }
+            .catch(this.logError)*/
+                .then(response => response.json())
+                .then(json => {
+                    console.log(json);
+                    /*this.setState((state) => ({test: json}));*/
+                });
+        }
 
     render() {
-        var json =  this.state.items;/*{
-            "active": {"label": "Active", "value": "12"},
-            "automatic": {"label": "Automatic", "value": "8"},
-            "waiting": {"label": "Waiting", "value": "1"},
-            "manual": {"label": "Manual", "value": "3"}
-        };*/
+        var json = this.state.test;
+        /*{
+                    "active": {"label": "Active", "value": "12"},
+                    "automatic": {"label": "Automatic", "value": "8"},
+                    "waiting": {"label": "Waiting", "value": "1"},
+                    "manual": {"label": "Manual", "value": "3"}
+                };*/
 
         /* {
               "a1": {"animal": "cat", "name": "kitten"},
@@ -78,7 +91,7 @@ class ItemLister extends React.Component {
         Object.keys(json).forEach(function (key) {
             arr.push(json[key]);
         });
-        return <ul>{arr.map(item => <MyAppChild key={item.animal} animal={item.animal} name={item.name}/>)}</ul>;
+        return <ul>{arr.map(item => <MyAppChild key={item.test} title={item.title} singer={item.singer}/>)}</ul>;
         /*return <ul>{arr.map(item => <MyAppChild key={item.animal} label={item.animal} value={item.name}/>)}</ul>;*/
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 class MyAppChild extends React.Component {
     render() {
-        return <li>{this.props.animal + " - " + this.props.name}</li>;
+        return <li>{this.props.title + " - " + this.props.singer}</li>;
     }
 }
 
