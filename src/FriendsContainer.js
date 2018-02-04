@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import AddFriend from './AddFriend.js';
 import ShowList from './ShowList.js';
 
-class FriendsContainer extends Component{
+class FriendsContainer extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -17,7 +17,7 @@ class FriendsContainer extends Component{
         this.addFriend = this.addFriend.bind(this);
     };
 
-    getInitialState (){
+    getInitialState() {
         return {
             name2: 'Tyler McGinnis',
             friends: [
@@ -28,19 +28,19 @@ class FriendsContainer extends Component{
             emails: []
         };
     }
-    addFriend(friend){
+
+    addFriend(friend) {
         this.setState({
             friends: this.state.friends.concat([friend])
         });
     }
 
 
-    render (){
+    render() {
         return (
             <div>
-                <h3> Name: {this.state.name} </h3>
-                <AddFriend addNew={this.addFriend} />
-                <ShowList names={this.state.friends} />
+                <AddFriend addNew={this.addFriend}/>
+                <ShowList names={this.state.friends}/>
             </div>
         )
     }

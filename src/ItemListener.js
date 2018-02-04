@@ -39,7 +39,10 @@ class ItemLister extends React.Component {
         Object.keys(json).forEach(function (key) {
             arr.push(json[key]);
         });
-        return <ul>{arr.map(item => <MyAppChild key={item.email} email={item.email}/>)}</ul>;
+
+            <h3> Emails </h3>
+            return <ul>{arr.map(item => <MyAppChild key={item.email} email={item.email}/>)}</ul>;
+
     }
 }
 
