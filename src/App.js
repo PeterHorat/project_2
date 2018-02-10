@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from './sleeping_dog_blue.GIF';
+import poem1 from './poem_1.jpg';
 import './App.css';
 import FriendsContainer from './FriendsContainer.js';
 
@@ -34,20 +35,36 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
+            <div className="flex-container">
+                <header>
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">Sleeping Dog</h1>
                 </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-                Hello {this.state.username}
-                <br/>
-                Change Name: <input type="text" value={this.state.username} onChange={this.handleChange}/>
-                <FriendsContainer container={this.friendsContainer}/>
-            </div>
+                <body>
+                <nav className="nav">
+                    <ul>
+                        <li><a href="#">London</a></li>
+                        <li><a href="#">Paris</a></li>
+                        <li><a href="#">Tokyo</a></li>
+                    </ul>
+                </nav>
 
+
+                <article className="article">
+                    <img className="centralimg" src={poem1}/>
+                    <br/>
+                    Hello{this.state.username}
+                    <br/>
+                    <div>
+                        Change Name: <input type="text" value={this.state.username} onChange={this.handleChange}/>
+                        <FriendsContainer container={this.friendsContainer}/>
+
+                    </div>
+                </article>
+                </body>
+                <footer>footer</footer>
+
+            </div>
         );
     }
 }
