@@ -3,35 +3,16 @@ import logo from './sleeping_dog_blue.GIF';
 import poem1 from './poem_1.jpg';
 import './App.css';
 import FriendsContainer from './FriendsContainer.js';
+import Spielwiese from './Spielwiese.js';
+import WhyReactNativeIsSoGreat from './WhyReactNativeIsSoGreat.js';
+
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom'
 
 class App extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.state = {
-            username: '@tylermcginnis33',
-            name: 'Tyler McGinnis',
-            friends: [
-                'Jake Lingwall',
-                'Murphy Randall',
-                'Merrick Christensen'
-            ],
-            emails: []
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.addFriend = this.addFriend.bind(this);
-    };
-
-    handleChange(e) {
-        this.setState({
-            username: e.target.value
-        });
-    };
-
-    addFriend(friend) {
-        this.setState({
-            friends: this.state.friends.concat([friend])
-        });
-    }
 
     render() {
         return (
@@ -41,26 +22,25 @@ class App extends Component {
                     <h1 className="App-title">Sleeping Dog</h1>
                 </header>
                 <body>
-                <nav className="nav">
-                    <ul>
-                        <li><a href="#">London</a></li>
-                        <li><a href="#">Paris</a></li>
-                        <li><a href="#">Tokyo</a></li>
-                    </ul>
-                </nav>
 
-
-                <article className="article">
-                    <img className="centralimg" src={poem1}/>
-                    <br/>
-                    Hello{this.state.username}
-                    <br/>
+                <Router>
                     <div>
-                        Change Name: <input type="text" value={this.state.username} onChange={this.handleChange}/>
-                        <FriendsContainer container={this.friendsContainer}/>
+                        <ul>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/test">Test</Link></li>
+                            <li><Link to="/topics">Topics</Link></li>
+                        </ul>
 
+                        <hr/>
+
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/about" component={Spielwiese}/>
+                        <Route path="/test" component={WhyReactNativeIsSoGreat}/>
+                        <Route path="/topics" component={Topics}/>
                     </div>
-                </article>
+                </Router>
+
                 </body>
                 <footer>footer</footer>
 
@@ -70,3 +50,76 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+const Home = () => (
+    <div>
+        <h2>Home</h2>
+    </div>
+)
+
+const About = () => (
+    <div>
+        <h2>About</h2>
+    </div>
+)
+
+const Test = () => (
+    <div>
+        <h2>Test</h2>
+    </div>
+)
+
+
+const Topic = ({ match }) => (
+    <div>
+        <h3>{match.params.topicId}</h3>
+    </div>
+)
+
+const Topics = ({ match }) => (
+    <div>
+        <h2>Topics</h2>
+        <ul>
+            <li>
+                <Link to={`${match.url}/rendering`}>
+                    Rendering with React
+                </Link>
+            </li>
+            <li>
+                <Link to={`${match.url}/components`}>
+                    Components
+                </Link>
+            </li>
+            <li>
+                <Link to={`${match.url}/props-v-state`}>
+                    Props v. State
+                </Link>
+            </li>
+        </ul>
+
+        <Route path={`${match.path}/:topicId`} component={Topic}/>
+        <Route exact path={match.path} render={() => (
+            <h3>Please select a topic.</h3>
+        )}/>
+    </div>
+)
+
+/*const BasicExample = () => (
+    <Router>
+        <div>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/topics">Topics</Link></li>
+            </ul>
+
+            <hr/>
+
+            <Route exact path="/" component={Home}/>
+            <Route path="/about" component={About}/>
+            <Route path="/topics" component={Topics}/>
+        </div>
+    </Router>
+)*/
