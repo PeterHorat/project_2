@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class WhyReactNativeIsSoGreat extends Component {
+class News extends Component {
     render() {
         return (
             <p>
@@ -14,4 +14,4 @@ class WhyReactNativeIsSoGreat extends Component {
     }
 }
 
-export default WhyReactNativeIsSoGreat;
+export default News;

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './sleeping_dog_blue.GIF';
 import poem1 from './poem_1.jpg';
 import './App.css';
 import FriendsContainer from './FriendsContainer.js';
@@ -37,17 +36,7 @@ class Spielwiese extends Component {
         return (
             <div className="flex-container">
                 <body>
-                <nav className="nav">
-                    <ul>
-                        <li><a href="#">London</a></li>
-                        <li><a href="#">Paris</a></li>
-                        <li><a href="#">Tokyo</a></li>
-                    </ul>
-                </nav>
-
-
                 <article className="article">
-                    <img className="centralimg" src={poem1}/>
                     <br/>
                     Hello{this.state.username}
                     <br/>

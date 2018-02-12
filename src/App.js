@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import logo from './sleeping_dog_blue.GIF';
-import poem1 from './poem_1.jpg';
 import './App.css';
-import FriendsContainer from './FriendsContainer.js';
-import Spielwiese from './Spielwiese.js';
-import WhyReactNativeIsSoGreat from './WhyReactNativeIsSoGreat.js';
+import SturmTags from './SturmTags.js';
+import Friends from './Friends.js';
+import News from './News.js';
 
 import {
     BrowserRouter as Router,
@@ -12,73 +11,20 @@ import {
     Link
 } from 'react-router-dom'
 
-class App extends Component {
-
-    render() {
-        return (
-            <div className="flex-container">
-                <header>
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Sleeping Dog</h1>
-                </header>
-                <body>
-
-                <Router>
-                    <div>
-                        <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/test">Test</Link></li>
-                            <li><Link to="/topics">Topics</Link></li>
-                        </ul>
-
-                        <hr/>
-
-                        <Route exact path="/" component={Home}/>
-                        <Route path="/about" component={Spielwiese}/>
-                        <Route path="/test" component={WhyReactNativeIsSoGreat}/>
-                        <Route path="/topics" component={Topics}/>
-                    </div>
-                </Router>
-
-                </body>
-                <footer>footer</footer>
-
-            </div>
-        );
-    }
-}
-
-export default App;
-
-
-
 const Home = () => (
     <div>
         <h2>Home</h2>
     </div>
 )
 
-const About = () => (
-    <div>
-        <h2>About</h2>
-    </div>
-)
 
-const Test = () => (
-    <div>
-        <h2>Test</h2>
-    </div>
-)
-
-
-const Topic = ({ match }) => (
+const Topic = ({match}) => (
     <div>
         <h3>{match.params.topicId}</h3>
     </div>
 )
 
-const Topics = ({ match }) => (
+const Topics = ({match}) => (
     <div>
         <h2>Topics</h2>
         <ul>
@@ -106,20 +52,48 @@ const Topics = ({ match }) => (
     </div>
 )
 
-/*const BasicExample = () => (
-    <Router>
-        <div>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/topics">Topics</Link></li>
-            </ul>
 
-            <hr/>
+class App extends Component {
 
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/topics" component={Topics}/>
-        </div>
-    </Router>
-)*/
+    render() {
+        return (
+            <div className="flex-container">
+                <header>
+                    <img src={logo} className="App-logo" alt="logo"/>
+                    <h1 className="App-title">Sleeping Dog</h1>
+                </header>
+                <body>
+
+                <Router>
+                    <div>
+                        <ul>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/sturmtags">SturmTags</Link></li>
+                            <li><Link to="/friends">Friends</Link></li>
+                            <li><Link to="/news">News</Link></li>
+                            <li><Link to="/topics">Topics</Link></li>
+                        </ul>
+
+                        <hr/>
+
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/sturmtags" component={SturmTags}/>
+                        <Route path="/friends" component={Friends}/>
+                        <Route path="/news" component={News}/>
+                        <Route path="/topics" component={Topics}/>
+                    </div>
+                </Router>
+
+                </body>
+                <footer>footer</footer>
+
+            </div>
+        );
+    }
+}
+
+export default App;
+
+
+
+
