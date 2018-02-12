@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import poem1 from './poem_1.jpg';
 import './App.css';
 import FriendsContainer from './FriendsContainer.js';
 

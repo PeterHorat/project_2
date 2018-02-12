@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from './sleeping_dog_blue.GIF';
+import logo from './img/sleeping_dog_blue.GIF';
 import './App.css';
 import SturmTags from './SturmTags.js';
 import Friends from './Friends.js';

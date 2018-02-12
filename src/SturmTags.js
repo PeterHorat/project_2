@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import poem1 from './poem_1.jpg';
+import poem1 from './img/poem_1.jpg';
 import './App.css';
-import FriendsContainer from './FriendsContainer.js';
 
 class SturmTags extends Component {
     constructor(props, context) {
@@ -39,13 +38,6 @@ class SturmTags extends Component {
                 <article className="article">
                     <img className="centralimg" src={poem1} alt={"storm-tags"}/>
                     <br/>
-                    Hello{this.state.username}
-                    <br/>
-                    <div>
-                        Change Name: <input type="text" value={this.state.username} onChange={this.handleChange}/>
-                        <FriendsContainer container={this.friendsContainer}/>
-
-                    </div>
                 </article>
                 </body>
             </div>
