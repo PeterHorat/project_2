@@ -4,6 +4,9 @@ import './App.css';
 import SturmTags from './SturmTags.js';
 import Friends from './Friends.js';
 import News from './News.js';
+import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Player } from 'video-react';
+import "./video-react.css";
 
 import {
     BrowserRouter as Router,
@@ -14,6 +17,11 @@ import {
 const Home = () => (
     <div>
         <h2>Home</h2>
+        <Player
+            playsInline
+            poster="./holz.jpg"
+            src="./toess.mov"
+        />
     </div>
 )
 
@@ -59,14 +67,24 @@ class App extends Component {
         return (
             <div className="flex-container">
                 <header>
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Sleeping Dog</h1>
+                    <Grid fluid>
+                        <Row>
+                            <Col xs={12} md={12}>
+                                <img src={logo} className="App-logo" alt="logo"/>
+                            </Col>
+                            <Col xs={12} md={12}>
+                                <h1 className="App-title">Sleeping Dog</h1>
+                            </Col>
+                        </Row>
+                    </Grid>
                 </header>
+
+
                 <body>
 
                 <Router>
                     <div>
-                        <ul>
+                        <ul className="navigation">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/sturmtags">SturmTags</Link></li>
                             <li><Link to="/friends">Friends</Link></li>
@@ -83,6 +101,7 @@ class App extends Component {
                         <Route path="/topics" component={Topics}/>
                     </div>
                 </Router>
+
 
                 </body>
                 <footer>footer</footer>
