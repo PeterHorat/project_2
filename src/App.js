@@ -19,8 +19,8 @@ const Home = () => (
         <h2>Home</h2>
         <Player
             playsInline
-            poster="./holz.jpg"
-            src="./toess.mov"
+            poster="./img/holz.jpg"
+            src="./img/toess.mov"
         />
     </div>
 )
@@ -65,15 +65,16 @@ class App extends Component {
 
     render() {
         return (
-            <div className="flex-container">
+           <div className="flex-container">
                 <header>
+
                     <Grid fluid>
                         <Row>
                             <Col xs={12} md={12}>
                                 <img src={logo} className="App-logo" alt="logo"/>
                             </Col>
                             <Col xs={12} md={12}>
-                                <h1 className="App-title">Sleeping Dog</h1>
+                                <h1 className="text-info">Sleeping Dog</h1>
                             </Col>
                         </Row>
                     </Grid>

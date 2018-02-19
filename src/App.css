@@ -22,11 +22,29 @@
     color: white;
 }
 
+
+.nav {
+    /*float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;*/
+    background: #aaa;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav ul a {
+    text-decoration: none;
+}
+
 .navigation a:hover {
     background: darken(deepskyblue, 2%);
 }
 
-@media all and (max-width: 800px) {
+/*@media all and (max-width: 800px) {
     .navigation {
         justify-content: space-around;
     }
@@ -50,7 +68,7 @@
     .navigation li:last-of-type a {
         border-bottom: none;
     }
-}
+}*/
 
 .App {
     text-align: center;
@@ -72,7 +90,7 @@
 
 .App-body {
     /*background-color: #333333;*/
-    background-image: url("Schiefer.jpg");
+    background-image: url("./img/Schiefer.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 20px;
@@ -88,27 +106,14 @@
     font-size: large;
 }
 
-@keyframes App-logo-spin {
+/*@keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
     }
-}
-
-.flex-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    text-align: center;
-    /*background: linear-gradient(dimgray, black) ;*/
-    background: white ;
-    color: black;
-    }
-
-
+}*/
 
 .article {
     /*background-image: url("background_all_sw.jpg");
@@ -131,14 +136,14 @@
 
 header {
     background: black;
-    background-image: url("header_background.jpg");
+    background-image: url("./img/header_background.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: white;
 }
 body {
     background: black;
-    background-image: url("Schiefer.jpg");
+    background-image: url("./img/Schiefer.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: white;
@@ -150,23 +155,8 @@ footer {
     color: black;
 }
 
-.nav {
-    /*float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;*/
-    background: #aaa;
-}
 
-.nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.nav ul a {
-    text-decoration: none;
-}
-
+/*
 @media all and (min-width: 768px) {
     .nav {
         text-align: left;
@@ -188,6 +178,7 @@ footer {
         order: 3;
     }
 }
+*/
 
 .parent {
     display: flex;
@@ -221,4 +212,15 @@ footer {
 
     /* Then we define how is distributed the remaining space */
     justify-content: space-around;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+    /*background: linear-gradient(dimgray, black) ;*/
+    background: white ;
+    color: black;
 }

@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap-less": "^3.3.8",
     "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-flexbox-grid": "^2.0.0",
@@ -19,10 +23,18 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "compile-less": "grunt compile-less",
+    "watch-less": "grunt watch"
   },
   "devDependencies": {
+    "bootstrap": "^4.0.0",
     "eslint": "^4.15.0",
-    "eslint-plugin-react": "^7.5.1"
+    "eslint-plugin-react": "^7.5.1",
+    "grunt": "^1.0.2",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1"
   }
 }
