@@ -12,6 +12,9 @@ import {Button} from 'react-bootstrap';
 import {Modal} from 'react-bootstrap';
 import {Popover} from 'react-bootstrap';
 import {Tooltip} from 'react-bootstrap';
+import {Tabs} from 'react-bootstrap';
+import {Tab} from 'react-bootstrap';
+import GoogleMapReact from 'google-map-react';
 
 import {OverlayTrigger} from 'react-bootstrap';
 import toffee from './img/toffee_token.jpg';
@@ -25,6 +28,8 @@ import {
     Route,
     Link
 } from 'react-router-dom'
+
+const AnyReactComponent = ({text}) => <div>{text}</div>;
 
 const Home = () => (
     <div>
@@ -74,18 +79,26 @@ const Topics = ({match}) => (
 
 
 class App extends Component {
+
+    static defaultProps = {
+        center: {lat: 59.95, lng: 30.33},
+        zoom: 11
+    };
+
     constructor(props, context) {
         super(props, context);
 
         this.handleSelect = this.handleSelect.bind(this);
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
 
 
         this.state = {
             index: 0,
             direction: null,
-            show: false
+            show: false,
+            key: 1
         };
     }
 
@@ -97,6 +110,12 @@ class App extends Component {
         });
     }
 
+    handleSelect(key) {
+        alert(`selected ${key}`);
+        this.setState({key});
+    }
+
+
     handleClose() {
         this.setState({show: false});
     }
@@ -104,6 +123,7 @@ class App extends Component {
     handleShow() {
         this.setState({show: true});
     }
+
 
     render() {
         const {index, direction} = this.state;
@@ -238,7 +258,6 @@ class App extends Component {
                     </div>
 
                 </div>
-
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title><span className="glyphicon glyphicon-lock"></span> Tickets</Modal.Title>
@@ -338,6 +357,79 @@ class App extends Component {
                         <p>Need <a href="#">help?</a></p>
                     </Modal.Footer>
                 </Modal>
+                <div className="container">
+                    <h3 className="text-center">Contact</h3>
+                    <p className="text-center"><em>We love our fans!</em></p>
+                    <div className="row test">
+                        <div className="col-md-4">
+                            <p>Fan? Drop a note.</p>
+                            <p><span className="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
+                            <p><span className="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
+                            <p><span className="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+                        </div>
+                        <div className="col-md-8">
+                            <div className="row">
+                                <div className="col-sm-6 form-group">
+                                    <input className="form-control" id="name" name="name" placeholder="Name" type="text"
+                                           required/>
+                                </div>
+                                <div className="col-sm-6 form-group">
+                                    <input className="form-control" id="email" name="email" placeholder="Email"
+                                           type="email" required/>
+                                </div>
+                            </div>
+                            <textarea className="form-control" id="comments" name="comments" placeholder="Comment"
+                                      rows="5"></textarea>
+                            <div className="row">
+                                <div className="col-md-12 form-group">
+                                    <button className="btn pull-right" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                        <Tabs
+                            activeKey={this.state.key}
+                            onSelect={this.handleSelect}
+                            id="controlled-tab-example"
+                        >
+                            <Tab eventKey={1} title="Mike">
+                                <h2>Mike Ross, Manager</h2>
+                                <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
+                            </Tab>
+                            <Tab eventKey={2} title="Chandler 2">
+                                <h2>Chandler Bing, Guitarist</h2>
+                                <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more
+                                    pleased?</p>
+                            </Tab>
+                            <Tab eventKey={3} title="Peter 3" disabled>
+                                <h2>Peter Griffin, Bass player</h2>
+                                <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+                            </Tab>
+                        </Tabs>
+                    </div>
+                    <GoogleMapReact
+                        bootstrapURLKeys=''
+                        defaultCenter={this.props.center}
+                        defaultZoom={this.props.zoom}
+                    >
+                        <AnyReactComponent
+                            lat={41.878114}
+                            lng={-87.629798}
+                            text={'Textli'}
+                        />
+                    </GoogleMapReact>
+                </div>
+                <GoogleMapReact
+                    bootstrapURLKeys=''
+                    defaultCenter={this.props.center}
+                    defaultZoom={this.props.zoom}
+                >
+                    <AnyReactComponent
+                        lat={41.878114}
+                        lng={-87.629798}
+                        text={'Textli'}
+                    />
+                </GoogleMapReact>
+
                 </body>
             </div>
         )
