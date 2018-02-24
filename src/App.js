@@ -14,6 +14,11 @@ import {Popover} from 'react-bootstrap';
 import {Tooltip} from 'react-bootstrap';
 import {Tabs} from 'react-bootstrap';
 import {Tab} from 'react-bootstrap';
+import {Nav} from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
+import {NavItem} from 'react-bootstrap';
+import {NavDropdown} from 'react-bootstrap';
+import {MenuItem} from 'react-bootstrap';
 import GoogleMapReact from 'google-map-react';
 
 import {OverlayTrigger} from 'react-bootstrap';
@@ -88,7 +93,8 @@ class App extends Component {
     constructor(props, context) {
         super(props, context);
 
-        this.handleSelect = this.handleSelect.bind(this);
+        this.handleSelectCarousel = this.handleSelectCarousel.bind(this);
+        this.handleSelectNavigation = this.handleSelectNavigation.bind(this);
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
@@ -102,12 +108,17 @@ class App extends Component {
         };
     }
 
-    handleSelect(selectedIndex, e) {
+    handleSelectCarousel(selectedIndex, e) {
         alert(`selected=${selectedIndex}, direction=${e.direction}`);
         this.setState({
             index: selectedIndex,
             direction: e.direction
         });
+    }
+
+    handleSelectNavigation(eventKey) {
+        //event.preventDefault();
+        alert(`selected ${eventKey}`);
     }
 
     handleSelect(key) {
@@ -135,36 +146,106 @@ class App extends Component {
         const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
 
         return (
+
             <div>
                 <head>
                     <title>Sleeping Dog</title>
                 </head>
                 <body>
-                <Carousel activeIndex={index}
-                          direction={direction}
-                          onSelect={this.handleSelect}>
-                    <Carousel.Item>
-                        <img width={1200} height={900} alt="1200x900" src={toffee_sw}/>
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img width={1200} height={900} alt="1200x900" src={geiss}/>
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img width={1200} height={900} alt="1200x900" src={wald}/>
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>;
+                <Navbar className='container-fluid'>
+                    <Navbar.Brand>
+                        <a href="#brand">Logo</a>
+                    </Navbar.Brand>
+                    <Navbar.Toggle/>
+                    <Navbar.Collapse>
+                        <Nav activeKey="1" pullRight>
+                            <NavItem eventKey={1} href="#">
+                                HOME
+                            </NavItem>
+                            <NavItem eventKey={2} href="#">
+                                BAND
+                            </NavItem>
+                            <NavItem eventKey={3} href="#">
+                                TOUR
+                            </NavItem>
+                            <NavItem eventKey={4} href="#">
+                                CONTACT
+                            </NavItem>
+                            <NavDropdown eventKey={5} title="MORE" id="nav-dropdown">
+                                <MenuItem eventKey={5.1}>Action</MenuItem>
+                                <MenuItem eventKey={5.2}>Another action</MenuItem>
+                                <MenuItem eventKey={5.3}>Something else here</MenuItem>
+                                <MenuItem divider/>
+                                <MenuItem eventKey={5.3}>Separated link</MenuItem>
+                            </NavDropdown>
+                            <NavItem eventKey="6" disabled>
+                                <span className="glyphicon glyphicon-search"></span>
+                            </NavItem>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+                {/*                <Navbar>
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a href="#brand">Logo</a>
+                        </Navbar.Brand>
+                        <Navbar.Toggle/>
+                    </Navbar.Header>
+                    <Navbar.Collapse>
+                        <Nav bsStyle="tabs" activeKey="1" pullRight='true'
+                             onSelect={k => this.handleSelectNavigation(k)}>
+                            <NavItem eventKey="1" href="/home">
+                                HOME
+                            </NavItem>
+                            <NavItem eventKey="2" title="Bnd">
+                                BAND
+                            </NavItem>
+                            <NavItem eventKey="3" disabled>
+                                TOUR
+                            </NavItem>
+                            <NavItem eventKey="4" disabled>
+                                CONTACT
+                            </NavItem>
+                            <NavDropdown eventKey="5" title="MORE" id="nav-dropdown">
+                                <MenuItem eventKey="5.1">Merchandise</MenuItem>
+                                <MenuItem eventKey="5.2">Extras</MenuItem>
+                                <MenuItem eventKey="5.3">Media</MenuItem>
+                                <MenuItem divider/>
+                                <MenuItem eventKey="5.4">Separated link</MenuItem>
+                            </NavDropdown>
+                            <NavItem eventKey="6" disabled>
+                                <span className="glyphicon glyphicon-search"></span>
+                            </NavItem>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>*/}
+                <div className='container'>
+                    <Carousel activeIndex={index}
+                              direction={direction}
+                              onSelect={this.handleSelectCarousel}>
+                        <Carousel.Item>
+                            <img width={1200} height={900} alt="1200x900" src={toffee_sw}/>
+                            <Carousel.Caption>
+                                <h3>First slide label</h3>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img width={1200} height={900} alt="1200x900" src={geiss}/>
+                            <Carousel.Caption>
+                                <h3>Second slide label</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img width={1200} height={900} alt="1200x900" src={wald}/>
+                            <Carousel.Caption>
+                                <h3>Third slide label</h3>
+                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    </Carousel>
+                </div>
                 <div className="container text-center">
                     <h3>Sleeping Dog</h3>
                     <p>We love music!</p>
@@ -429,7 +510,6 @@ class App extends Component {
                         text={'Textli'}
                     />
                 </GoogleMapReact>
-
                 </body>
             </div>
         )
