@@ -152,73 +152,41 @@ class App extends Component {
                     <title>Sleeping Dog</title>
                 </head>
                 <body>
-                <Navbar className='container-fluid'>
-                    <Navbar.Brand>
-                        <a href="#brand">Logo</a>
-                    </Navbar.Brand>
-                    <Navbar.Toggle/>
-                    <Navbar.Collapse>
-                        <Nav activeKey="1" pullRight>
-                            <NavItem eventKey={1} href="#">
-                                HOME
-                            </NavItem>
-                            <NavItem eventKey={2} href="#">
-                                BAND
-                            </NavItem>
-                            <NavItem eventKey={3} href="#">
-                                TOUR
-                            </NavItem>
-                            <NavItem eventKey={4} href="#">
-                                CONTACT
-                            </NavItem>
-                            <NavDropdown eventKey={5} title="MORE" id="nav-dropdown">
-                                <MenuItem eventKey={5.1}>Action</MenuItem>
-                                <MenuItem eventKey={5.2}>Another action</MenuItem>
-                                <MenuItem eventKey={5.3}>Something else here</MenuItem>
-                                <MenuItem divider/>
-                                <MenuItem eventKey={5.3}>Separated link</MenuItem>
-                            </NavDropdown>
-                            <NavItem eventKey="6" disabled>
-                                <span className="glyphicon glyphicon-search"></span>
-                            </NavItem>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
-                {/*                <Navbar>
-                    <Navbar.Header>
+                <div className='container'>
+                    <Navbar className='container-fluid' collapseOnSelect>
                         <Navbar.Brand>
                             <a href="#brand">Logo</a>
                         </Navbar.Brand>
                         <Navbar.Toggle/>
-                    </Navbar.Header>
-                    <Navbar.Collapse>
-                        <Nav bsStyle="tabs" activeKey="1" pullRight='true'
-                             onSelect={k => this.handleSelectNavigation(k)}>
-                            <NavItem eventKey="1" href="/home">
-                                HOME
-                            </NavItem>
-                            <NavItem eventKey="2" title="Bnd">
-                                BAND
-                            </NavItem>
-                            <NavItem eventKey="3" disabled>
-                                TOUR
-                            </NavItem>
-                            <NavItem eventKey="4" disabled>
-                                CONTACT
-                            </NavItem>
-                            <NavDropdown eventKey="5" title="MORE" id="nav-dropdown">
-                                <MenuItem eventKey="5.1">Merchandise</MenuItem>
-                                <MenuItem eventKey="5.2">Extras</MenuItem>
-                                <MenuItem eventKey="5.3">Media</MenuItem>
-                                <MenuItem divider/>
-                                <MenuItem eventKey="5.4">Separated link</MenuItem>
-                            </NavDropdown>
-                            <NavItem eventKey="6" disabled>
-                                <span className="glyphicon glyphicon-search"></span>
-                            </NavItem>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>*/}
+                        <Navbar.Collapse>
+                            <Nav bsStyle="tabs" activeKey="1" pullRight onSelect={k => this.handleSelectNavigation(k)}>
+                                <NavItem eventKey={1} href="#">
+                                    HOME
+                                </NavItem>
+                                <NavItem eventKey={2} href="#">
+                                    BAND
+                                </NavItem>
+                                <NavItem eventKey={3} href="#">
+                                    TOUR
+                                </NavItem>
+                                <NavItem eventKey={4} href="#">
+                                    CONTACT
+                                </NavItem>
+                                <NavDropdown eventKey={5} title="MORE" id="nav-dropdown">
+                                    <MenuItem eventKey="5.1">Merchandise</MenuItem>
+                                    <MenuItem eventKey="5.2">Extras</MenuItem>
+                                    <MenuItem eventKey="5.3">Media</MenuItem>
+                                    <MenuItem divider/>
+                                    <MenuItem eventKey="5.4">Separated link</MenuItem>
+                                </NavDropdown>
+                                <NavItem eventKey="6" disabled>
+                                    <span className="glyphicon glyphicon-search"></span>
+                                </NavItem>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Navbar>
+                </div>
+
                 <div className='container'>
                     <Carousel activeIndex={index}
                               direction={direction}
@@ -288,8 +256,9 @@ class App extends Component {
                         </div>
                     </Router>
                 </div>
-                <div className="bg-1">
-                    <div className="container">
+                <div className="container">
+                    <div className="bg-1">
+
                         <h3 className="text-center">TOUR DATES</h3>
                         <p className="text-center">Lorem ipsum we'll play you some music.<br/> Remember to book your
                             tickets!</p>
