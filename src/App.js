@@ -20,6 +20,7 @@ import {NavItem} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
 import {MenuItem} from 'react-bootstrap';
 import GoogleMapReact from 'google-map-react';
+import ReactSmoothScroll from 'react-smooth-scroll';
 
 import {OverlayTrigger} from 'react-bootstrap';
 import toffee from './img/toffee_token.jpg';
@@ -146,315 +147,335 @@ class App extends Component {
         const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
 
         return (
-
-            <div>
-                <head>
-                    <title>Sleeping Dog</title>
-                </head>
-                <body>
-                <div className='container'>
-                    <Navbar className='container-fluid' collapseOnSelect>
-                        <Navbar.Brand>
-                            <a href="#brand">Logo</a>
-                        </Navbar.Brand>
-                        <Navbar.Toggle/>
-                        <Navbar.Collapse>
-                            <Nav bsStyle="tabs" activeKey="1" pullRight onSelect={k => this.handleSelectNavigation(k)}>
-                                <NavItem eventKey={1} href="#">
-                                    HOME
-                                </NavItem>
-                                <NavItem eventKey={2} href="#">
-                                    BAND
-                                </NavItem>
-                                <NavItem eventKey={3} href="#">
-                                    TOUR
-                                </NavItem>
-                                <NavItem eventKey={4} href="#">
-                                    CONTACT
-                                </NavItem>
-                                <NavDropdown eventKey={5} title="MORE" id="nav-dropdown">
-                                    <MenuItem eventKey="5.1">Merchandise</MenuItem>
-                                    <MenuItem eventKey="5.2">Extras</MenuItem>
-                                    <MenuItem eventKey="5.3">Media</MenuItem>
-                                    <MenuItem divider/>
-                                    <MenuItem eventKey="5.4">Separated link</MenuItem>
-                                </NavDropdown>
-                                <NavItem eventKey="6" disabled>
-                                    <span className="glyphicon glyphicon-search"></span>
-                                </NavItem>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Navbar>
-                </div>
-
-                <div className='container'>
-                    <Carousel activeIndex={index}
-                              direction={direction}
-                              onSelect={this.handleSelectCarousel}>
-                        <Carousel.Item>
-                            <img width={1200} height={900} alt="1200x900" src={toffee_sw}/>
-                            <Carousel.Caption>
-                                <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img width={1200} height={900} alt="1200x900" src={geiss}/>
-                            <Carousel.Caption>
-                                <h3>Second slide label</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img width={1200} height={900} alt="1200x900" src={wald}/>
-                            <Carousel.Caption>
-                                <h3>Third slide label</h3>
-                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    </Carousel>
-                </div>
-                <div className="container text-center">
-                    <h3>Sleeping Dog</h3>
-                    <p>We love music!</p>
-                    <p>We have created a fictional band website. Lorem ipsum..</p>
-                    <Router>
-                        <div className="row">
-                            <div className="col-sm-4">
-                                <p><strong>Toffee</strong></p><br/>
-                                <Link to='#demo' data-toggle="collapse">
-                                    <img className='img-circle person' src={toffee} alt="Random Name"/>
-                                </Link>
-                                <div id='demo'>
-                                    <p>Guitarist and Lead Vocalist</p>
-                                    <p>Loves long walks on the beach</p>
-                                    <p>Member since 1988</p>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <p><strong>Toffee</strong></p><br/>
-                                <Link to='#demo2' data-toggle="collapse">
-                                    <img className='img-circle person' src={toffee} alt="Random Name"/>
-                                </Link>
-                                <div id="demo2">
-                                    <p>Drummer</p>
-                                    <p>Loves drummin'</p>
-                                    <p>Member since 1988</p>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <p><strong>Toffee</strong></p><br/>
-                                <Link to='#demo3' data-toggle="collapse">
-                                    <img className='img-circle person' src={toffee} alt="Random Name"/>
-                                </Link>
-                                <div id="demo3">
-                                    <p>Bass player</p>
-                                    <p>Loves math</p>
-                                    <p>Member since 2005</p>
-                                </div>
-                            </div>
-                        </div>
-                    </Router>
-                </div>
-                <div className="container">
-                    <div className="bg-1">
-
-                        <h3 className="text-center">TOUR DATES</h3>
-                        <p className="text-center">Lorem ipsum we'll play you some music.<br/> Remember to book your
-                            tickets!</p>
-
-                        <ul className="list-group">
-                            <li className="list-group-item">September <span
-                                className="label label-danger">Sold Out!</span>
-                            </li>
-                            <li className="list-group-item">October <span
-                                className="label label-danger">Sold Out!</span>
-                            </li>
-                            <li className="list-group-item">November <span className="badge">3</span></li>
-                        </ul>
-
-                        <div className="row text-center">
-                            <div className="col-sm-4">
-                                <div className="thumbnail">
-                                    <img src={holz} alt="Paris"/>
-                                    <p><strong>Paris</strong></p>
-                                    <p>Fri. 27 November 2015</p>
-                                    <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-                                        Buy Tickets
-                                    </Button>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="thumbnail">
-                                    <img src={holz} alt="New York"/>
-                                    <p><strong>New York</strong></p>
-                                    <p>Sat. 28 November 2015</p>
-                                    <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-                                        Buy Tickets
-                                    </Button>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="thumbnail">
-                                    <img src={holz} alt="San Francisco"/>
-                                    <p><strong>San Francisco</strong></p>
-                                    <p>Sun. 29 November 2015</p>
-                                    <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-                                        Buy Tickets
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
+            <ReactSmoothScroll>
+                <div>
+                    <head>
+                        <title>Sleeping Dog</title>
+                    </head>
+                    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+                    <div className='container'>
+                        <Navbar className='container-fluid' collapseOnSelect>
+                            <Navbar.Brand>
+                                <a href="#brand">Logo</a>
+                            </Navbar.Brand>
+                            <Navbar.Toggle/>
+                            <Navbar.Collapse>
+                                <Nav bsStyle="tabs" activeKey="1" pullRight
+                                     onSelect={k => this.handleSelectNavigation(k)}>
+                                    <NavItem eventKey={1} href="#home">
+                                        HOME
+                                    </NavItem>
+                                    <NavItem eventKey={2} href="#band">
+                                        BAND
+                                    </NavItem>
+                                    <NavItem eventKey={3} href="#tour">
+                                        TOUR
+                                    </NavItem>
+                                    <NavItem eventKey={4} href="#contact">
+                                        CONTACT
+                                    </NavItem>
+                                    <NavDropdown eventKey={5} title="MORE" id="nav-dropdown">
+                                        <MenuItem eventKey="5.1">Merchandise</MenuItem>
+                                        <MenuItem eventKey="5.2">Extras</MenuItem>
+                                        <MenuItem eventKey="5.3">Media</MenuItem>
+                                        <MenuItem divider/>
+                                        <MenuItem eventKey="5.4">Separated link</MenuItem>
+                                    </NavDropdown>
+                                    <NavItem eventKey="6" disabled>
+                                        <span className="glyphicon glyphicon-search"></span>
+                                    </NavItem>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Navbar>
                     </div>
 
-                </div>
-                <Modal show={this.state.show} onHide={this.handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title><span className="glyphicon glyphicon-lock"></span> Tickets</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <form role="form">
-                            <div className="form-group">
-                                <label for="psw"><span
-                                    className="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per
-                                    person</label>
-                                <input type="number" className="form-control" id="psw" placeholder="How many?"/>
-                            </div>
-                            <div className="form-group">
-                                <label for="usrname"><span className="glyphicon glyphicon-user"></span> Send To</label>
-                                <input type="text" className="form-control" id="usrname"
-                                       placeholder="Enter email"/>
-                            </div>
-                            <button type="submit" className="btn btn-block">Pay
-                                <span className="glyphicon glyphicon-ok"></span>
-                            </button>
-                        </form>
-                        <h4>Text in a modal</h4>
-                        <p>
-                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                        </p>
-
-                        <h4>Popover in a modal</h4>
-                        <p>
-                            there is a{' '}
-                            <OverlayTrigger overlay={popover}>
-                                <a href="#popover">popover</a>
-                            </OverlayTrigger>{' '}
-                            here
-                        </p>
-
-                        <h4>Tooltips in a modal</h4>
-                        <p>
-                            there is a{' '}
-                            <OverlayTrigger overlay={tooltip}>
-                                <a href="#tooltip">tooltip</a>
-                            </OverlayTrigger>{' '}
-                            here
-                        </p>
-
-                        <hr/>
-
-                        <h4>Overflowing text to show scroll behavior</h4>
-                        <p>
-                            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-                            ac consectetur ac, vestibulum at eros.
-                        </p>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                            et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                            auctor.
-                        </p>
-                        <p>
-                            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-                            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-                            dui. Donec ullamcorper nulla non metus auctor fringilla.
-                        </p>
-                        <p>
-                            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-                            ac consectetur ac, vestibulum at eros.
-                        </p>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                            et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                            auctor.
-                        </p>
-                        <p>
-                            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-                            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-                            dui. Donec ullamcorper nulla non metus auctor fringilla.
-                        </p>
-                        <p>
-                            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-                            ac consectetur ac, vestibulum at eros.
-                        </p>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                            et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                            auctor.
-                        </p>
-                        <p>
-                            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-                            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-                            dui. Donec ullamcorper nulla non metus auctor fringilla.
-                        </p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button className="btn btn-danger btn-default pull-left" onClick={this.handleClose}> <span
-                            className="glyphicon glyphicon-remove"></span> Cancel</Button>
-                        <p>Need <a href="#">help?</a></p>
-                    </Modal.Footer>
-                </Modal>
-                <div className="container">
-                    <h3 className="text-center">Contact</h3>
-                    <p className="text-center"><em>We love our fans!</em></p>
-                    <div className="row test">
-                        <div className="col-md-4">
-                            <p>Fan? Drop a note.</p>
-                            <p><span className="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
-                            <p><span className="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
-                            <p><span className="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
-                        </div>
-                        <div className="col-md-8">
+                    <div className='container'>
+                        <Carousel activeIndex={index}
+                                  direction={direction}
+                                  onSelect={this.handleSelectCarousel}>
+                            <Carousel.Item>
+                                <img width={1200} height={900} alt="1200x900" src={toffee_sw}/>
+                                <Carousel.Caption>
+                                    <h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img width={1200} height={900} alt="1200x900" src={geiss}/>
+                                <Carousel.Caption>
+                                    <h3>Second slide label</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img width={1200} height={900} alt="1200x900" src={wald}/>
+                                <Carousel.Caption>
+                                    <h3>Third slide label</h3>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        </Carousel>
+                    </div>
+                    <div id="band" className="container text-center">
+                        <h3>Sleeping Dog</h3>
+                        <p>We love music!</p>
+                        <p>We have created a fictional band website. Lorem ipsum..</p>
+                        <Router>
                             <div className="row">
-                                <div className="col-sm-6 form-group">
-                                    <input className="form-control" id="name" name="name" placeholder="Name" type="text"
-                                           required/>
+                                <div className="col-sm-4">
+                                    <p><strong>Toffee</strong></p><br/>
+                                    <Link to='#demo' data-toggle="collapse">
+                                        <img className='img-circle person' src={toffee} alt="Random Name"/>
+                                    </Link>
+                                    <div id='demo'>
+                                        <p>Guitarist and Lead Vocalist</p>
+                                        <p>Loves long walks on the beach</p>
+                                        <p>Member since 1988</p>
+                                    </div>
                                 </div>
-                                <div className="col-sm-6 form-group">
-                                    <input className="form-control" id="email" name="email" placeholder="Email"
-                                           type="email" required/>
+                                <div className="col-sm-4">
+                                    <p><strong>Toffee</strong></p><br/>
+                                    <Link to='#demo2' data-toggle="collapse">
+                                        <img className='img-circle person' src={toffee} alt="Random Name"/>
+                                    </Link>
+                                    <div id="demo2">
+                                        <p>Drummer</p>
+                                        <p>Loves drummin'</p>
+                                        <p>Member since 1988</p>
+                                    </div>
+                                </div>
+                                <div className="col-sm-4">
+                                    <p><strong>Toffee</strong></p><br/>
+                                    <Link to='#demo3' data-toggle="collapse">
+                                        <img className='img-circle person' src={toffee} alt="Random Name"/>
+                                    </Link>
+                                    <div id="demo3">
+                                        <p>Bass player</p>
+                                        <p>Loves math</p>
+                                        <p>Member since 2005</p>
+                                    </div>
                                 </div>
                             </div>
-                            <textarea className="form-control" id="comments" name="comments" placeholder="Comment"
-                                      rows="5"></textarea>
-                            <div className="row">
-                                <div className="col-md-12 form-group">
-                                    <button className="btn pull-right" type="submit">Send</button>
+                        </Router>
+                    </div>
+                    <div id="tour" className="container">
+                        <div className="bg-1">
+
+                            <h3 className="text-center">TOUR DATES</h3>
+                            <p className="text-center">Lorem ipsum we'll play you some music.<br/> Remember to book your
+                                tickets!</p>
+
+                            <ul className="list-group">
+                                <li className="list-group-item">September <span
+                                    className="label label-danger">Sold Out!</span>
+                                </li>
+                                <li className="list-group-item">October <span
+                                    className="label label-danger">Sold Out!</span>
+                                </li>
+                                <li className="list-group-item">November <span className="badge">3</span></li>
+                            </ul>
+
+                            <div className="row text-center">
+                                <div className="col-sm-4">
+                                    <div className="thumbnail">
+                                        <img src={holz} alt="Paris"/>
+                                        <p><strong>Paris</strong></p>
+                                        <p>Fri. 27 November 2015</p>
+                                        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+                                            Buy Tickets
+                                        </Button>
+                                    </div>
+                                </div>
+                                <div className="col-sm-4">
+                                    <div className="thumbnail">
+                                        <img src={holz} alt="New York"/>
+                                        <p><strong>New York</strong></p>
+                                        <p>Sat. 28 November 2015</p>
+                                        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+                                            Buy Tickets
+                                        </Button>
+                                    </div>
+                                </div>
+                                <div className="col-sm-4">
+                                    <div className="thumbnail">
+                                        <img src={holz} alt="San Francisco"/>
+                                        <p><strong>San Francisco</strong></p>
+                                        <p>Sun. 29 November 2015</p>
+                                        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+                                            Buy Tickets
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <Tabs
-                            activeKey={this.state.key}
-                            onSelect={this.handleSelect}
-                            id="controlled-tab-example"
+
+                    </div>
+                    <Modal show={this.state.show} onHide={this.handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title><span className="glyphicon glyphicon-lock"></span> Tickets</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <form role="form">
+                                <div className="form-group">
+                                    <label for="psw"><span
+                                        className="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per
+                                        person</label>
+                                    <input type="number" className="form-control" id="psw" placeholder="How many?"/>
+                                </div>
+                                <div className="form-group">
+                                    <label for="usrname"><span className="glyphicon glyphicon-user"></span> Send
+                                        To</label>
+                                    <input type="text" className="form-control" id="usrname"
+                                           placeholder="Enter email"/>
+                                </div>
+                                <button type="submit" className="btn btn-block">Pay
+                                    <span className="glyphicon glyphicon-ok"></span>
+                                </button>
+                            </form>
+                            <h4>Text in a modal</h4>
+                            <p>
+                                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                            </p>
+
+                            <h4>Popover in a modal</h4>
+                            <p>
+                                there is a{' '}
+                                <OverlayTrigger overlay={popover}>
+                                    <a href="#popover">popover</a>
+                                </OverlayTrigger>{' '}
+                                here
+                            </p>
+
+                            <h4>Tooltips in a modal</h4>
+                            <p>
+                                there is a{' '}
+                                <OverlayTrigger overlay={tooltip}>
+                                    <a href="#tooltip">tooltip</a>
+                                </OverlayTrigger>{' '}
+                                here
+                            </p>
+
+                            <hr/>
+
+                            <h4>Overflowing text to show scroll behavior</h4>
+                            <p>
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+                                ac consectetur ac, vestibulum at eros.
+                            </p>
+                            <p>
+                                Praesent commodo cursus magna, vel scelerisque nisl consectetur
+                                et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                                auctor.
+                            </p>
+                            <p>
+                                Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+                                cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
+                                dui. Donec ullamcorper nulla non metus auctor fringilla.
+                            </p>
+                            <p>
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+                                ac consectetur ac, vestibulum at eros.
+                            </p>
+                            <p>
+                                Praesent commodo cursus magna, vel scelerisque nisl consectetur
+                                et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                                auctor.
+                            </p>
+                            <p>
+                                Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+                                cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
+                                dui. Donec ullamcorper nulla non metus auctor fringilla.
+                            </p>
+                            <p>
+                                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+                                ac consectetur ac, vestibulum at eros.
+                            </p>
+                            <p>
+                                Praesent commodo cursus magna, vel scelerisque nisl consectetur
+                                et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                                auctor.
+                            </p>
+                            <p>
+                                Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+                                cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
+                                dui. Donec ullamcorper nulla non metus auctor fringilla.
+                            </p>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button className="btn btn-danger btn-default pull-left" onClick={this.handleClose}> <span
+                                className="glyphicon glyphicon-remove"></span> Cancel</Button>
+                            <p>Need <a href="#">help?</a></p>
+                        </Modal.Footer>
+                    </Modal>
+                    <div id="contact" className="container">
+                        <h3 className="text-center">Contact</h3>
+                        <p className="text-center"><em>We love our fans!</em></p>
+                        <div className="row test">
+                            <div className="col-md-4">
+                                <p>Fan? Drop a note.</p>
+                                <p><span className="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
+                                <p><span className="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
+                                <p><span className="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+                            </div>
+                            <div className="col-md-8">
+                                <div className="row">
+                                    <div className="col-sm-6 form-group">
+                                        <input className="form-control" id="name" name="name" placeholder="Name"
+                                               type="text"
+                                               required/>
+                                    </div>
+                                    <div className="col-sm-6 form-group">
+                                        <input className="form-control" id="email" name="email" placeholder="Email"
+                                               type="email" required/>
+                                    </div>
+                                </div>
+                                <textarea className="form-control" id="comments" name="comments" placeholder="Comment"
+                                          rows="5"></textarea>
+                                <div className="row">
+                                    <div className="col-md-12 form-group">
+                                        <button className="btn pull-right" type="submit">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='container'>
+                                <Tabs
+                                    activeKey={this.state.key}
+                                    onSelect={this.handleSelect}
+                                    id="controlled-tab-example"
+                                >
+                                    <Tab eventKey={1} title="Mike">
+                                        <h2>Mike Ross, Manager</h2>
+                                        <p>Man, we've been on the road for some time now. Looking forward to lorem
+                                            ipsum.</p>
+                                    </Tab>
+                                    <Tab eventKey={2} title="Chandler 2">
+                                        <h2>Chandler Bing, Guitarist</h2>
+                                        <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE..
+                                            any
+                                            more
+                                            pleased?</p>
+                                    </Tab>
+                                    <Tab eventKey={3} title="Peter 3" disabled>
+                                        <h2>Peter Griffin, Bass player</h2>
+                                        <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+                                    </Tab>
+                                </Tabs>
+                            </div>
+                        </div>
+                        <GoogleMapReact
+                            bootstrapURLKeys=''
+                            defaultCenter={this.props.center}
+                            defaultZoom={this.props.zoom}
                         >
-                            <Tab eventKey={1} title="Mike">
-                                <h2>Mike Ross, Manager</h2>
-                                <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
-                            </Tab>
-                            <Tab eventKey={2} title="Chandler 2">
-                                <h2>Chandler Bing, Guitarist</h2>
-                                <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more
-                                    pleased?</p>
-                            </Tab>
-                            <Tab eventKey={3} title="Peter 3" disabled>
-                                <h2>Peter Griffin, Bass player</h2>
-                                <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
-                            </Tab>
-                        </Tabs>
+                            <AnyReactComponent
+                                lat={41.878114}
+                                lng={-87.629798}
+                                text={'Textli'}
+                            />
+                        </GoogleMapReact>
                     </div>
                     <GoogleMapReact
                         bootstrapURLKeys=''
@@ -467,20 +488,19 @@ class App extends Component {
                             text={'Textli'}
                         />
                     </GoogleMapReact>
+                    <div className='container'>
+                        <footer className="text-center">
+                            <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </a><br/><br/>
+                            <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" data-toggle="tooltip"
+                                                          title="Visit w3schools">www.w3schools.com</a></p>
+                        </footer>
+                    </div>
+
+                    </body>
                 </div>
-                <GoogleMapReact
-                    bootstrapURLKeys=''
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
-                >
-                    <AnyReactComponent
-                        lat={41.878114}
-                        lng={-87.629798}
-                        text={'Textli'}
-                    />
-                </GoogleMapReact>
-                </body>
-            </div>
+            </ReactSmoothScroll>
         )
     }
 }
