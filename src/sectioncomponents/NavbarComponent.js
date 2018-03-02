@@ -1,0 +1,68 @@
+import React, {Component} from 'react';
+
+import '../App.css';
+import {Nav} from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
+import {NavItem} from 'react-bootstrap';
+import {NavDropdown} from 'react-bootstrap';
+import {MenuItem} from 'react-bootstrap';
+
+class NavbarComponent extends Component {
+
+    constructor(props, context) {
+        super(props, context);
+        this.handleSelectNavigation = this.handleSelectNavigation.bind(this);
+    }
+
+
+    handleSelectNavigation(eventKey) {
+        //event.preventDefault();
+        alert(`selected ${eventKey}`);
+    }
+
+    render() {
+        return (
+            <div className='container'>
+                <Navbar className='container-fluid' collapseOnSelect>
+                    <Navbar.Brand>
+                        <a href="#brand">Logo</a>
+                    </Navbar.Brand>
+                    <Navbar.Toggle/>
+                    <Navbar.Collapse>
+                        <Nav bsStyle="tabs" activeKey="1" pullRight
+                             onSelect={k => this.handleSelectNavigation(k)}>
+                            <NavItem eventKey={1} href="#home">
+                                HOME
+                            </NavItem>
+                            <NavItem eventKey={2} href="#band">
+                                BAND
+                            </NavItem>
+                            <NavItem eventKey={3} href="#tour">
+                                TOUR
+                            </NavItem>
+                            <NavItem eventKey={4} href="#contact">
+                                CONTACT
+                            </NavItem>
+                            <NavDropdown eventKey={5} title="MORE" id="nav-dropdown">
+                                <MenuItem eventKey="5.1">Merchandise</MenuItem>
+                                <MenuItem eventKey="5.2">Extras</MenuItem>
+                                <MenuItem eventKey="5.3">Media</MenuItem>
+                                <MenuItem divider/>
+                                <MenuItem eventKey="5.4">Separated link</MenuItem>
+                            </NavDropdown>
+                            <NavItem eventKey="6" disabled>
+                                <span className="glyphicon glyphicon-search"></span>
+                            </NavItem>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            </div>
+        )
+    }
+}
+
+export default NavbarComponent;
+
+
+
+
