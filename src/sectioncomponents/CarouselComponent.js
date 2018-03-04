@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../App.css';
+import './CarouselComponent.css';
 
 import {Carousel} from 'react-bootstrap';
 import {Popover} from 'react-bootstrap';
@@ -39,12 +39,6 @@ class CarouselComponent extends Component {
 
     render() {
         const {index, direction, isOpened} = this.state;
-        const popover = (
-            <Popover id="modal-popover" title="popover">
-                very popover. such engagement
-            </Popover>
-        );
-        const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
 
         return (
             <div className='container'>
