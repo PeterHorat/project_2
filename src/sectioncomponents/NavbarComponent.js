@@ -6,6 +6,7 @@ import {Navbar} from 'react-bootstrap';
 import {NavItem} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
 import {MenuItem} from 'react-bootstrap';
+import logo from '../img/logo.png';
 
 class NavbarComponent extends Component {
 
@@ -25,7 +26,7 @@ class NavbarComponent extends Component {
             <div className='container'>
                 <Navbar className='container-fluid' collapseOnSelect>
                     <Navbar.Brand>
-                        <a href="#brand">Logo</a>
+                        <a href="#brand"><img src={logo} alt="Random Name"/></a>
                     </Navbar.Brand>
                     <Navbar.Toggle/>
                     <Navbar.Collapse>

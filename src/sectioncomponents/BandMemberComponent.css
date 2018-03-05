@@ -1,0 +1,30 @@
+.person {
+    border: 10px solid transparent !important;
+    margin-bottom: 25px !important;
+    width: 80% !important;
+    height: 80% !important;
+    opacity: 0.7 !important;
+    filter: grayscale(90%); /* make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+
+.person:hover {
+    border-color: #f1f1f1 !important;
+}
+
+.ReactCollapse--collapse {
+    max-width: 800px !important;
+    border: 1px solid rgba(3, 169, 244, 0.3) !important;
+    border-radius: 10px !important;
+    background-color: rgba(100, 255, 100, 0.1) !important;
+}
+
+.ReactCollapse--content {
+}
+
+.ReactCollapse--collapse {
+    border: none !important;
+    background-color: white !important;
+}
+
