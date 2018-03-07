@@ -1,0 +1,6 @@
+#googleMap {
+    width: 100% !important; /* Span the entire width of the screen */
+    height: 400px !important; /* Set the height to 400 pixels */
+    -webkit-filter: grayscale(100%) !important;
+    filter: grayscale(100%) !important;
+}

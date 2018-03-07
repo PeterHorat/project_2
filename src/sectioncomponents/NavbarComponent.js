@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../App.css';
+import './NavbarComponent.css';
 import {Nav} from 'react-bootstrap';
 import {Navbar} from 'react-bootstrap';
 import {NavItem} from 'react-bootstrap';
