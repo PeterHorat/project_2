@@ -44,10 +44,13 @@ class NavbarComponent extends Component {
                             <NavItem eventKey={4} href="#contact">
                                 CONTACT
                             </NavItem>
-                            <NavDropdown eventKey={5} title="MORE" id="nav-dropdown">
-                                <MenuItem eventKey="5.1">Merchandise</MenuItem>
-                                <MenuItem eventKey="5.2">Extras</MenuItem>
-                                <MenuItem eventKey="5.3">Media</MenuItem>
+                            <NavItem eventKey={5} href="#books">
+                                BOOKS
+                            </NavItem>
+                            <NavDropdown eventKey={6} title="MORE" id="nav-dropdown">
+                                <MenuItem eventKey="5.1">Subitem 1</MenuItem>
+                                <MenuItem eventKey="5.2">Subitem 2</MenuItem>
+                                <MenuItem eventKey="5.3">Subitem 3</MenuItem>
                                 <MenuItem divider/>
                                 <MenuItem eventKey="5.4">Separated link</MenuItem>
                             </NavDropdown>

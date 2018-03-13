@@ -4,11 +4,6 @@ import {Collapse} from 'react-collapse';
 import toffee from '../img/toffee_token.jpg';
 import PropTypes from 'prop-types';
 
-import {
-    BrowserRouter as Router,
-    Link
-} from 'react-router-dom'
-
 
 class BandMemberComponent extends Component {
 
@@ -39,11 +34,9 @@ class BandMemberComponent extends Component {
     }
 
     render() {
-
         const {isOpened} = this.state;
         return (
             <div>
-
                 <p><strong>{this.props.name}</strong></p><br/>
                 <a onClick={this.handleIsOpenCollapse}>
                     <img className='img-circle person' src={toffee} alt="Random Name"/>

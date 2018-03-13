@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from './img/sleeping_dog_blue.GIF';
 import './App.css';
-import SturmTags from './SturmTags.js';
+import SturmTags from './sectioncomponents/SturmTags.js';
 import Friends from './Friends.js';
 import News from './News.js';
 import {Grid, Row, Col} from 'react-flexbox-grid';

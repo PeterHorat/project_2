@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import './CarouselComponent.css';
 
 import {Carousel} from 'react-bootstrap';
-import {Popover} from 'react-bootstrap';
-import {Tooltip} from 'react-bootstrap';
-
-
 
 import toffee_sw from '../img/toffee_sw.jpg';
 import geiss from '../img/geiss_sw.jpg';
@@ -38,7 +34,7 @@ class CarouselComponent extends Component {
 
 
     render() {
-        const {index, direction, isOpened} = this.state;
+        const {index, direction} = this.state;
 
         return (
             <div className='container'>

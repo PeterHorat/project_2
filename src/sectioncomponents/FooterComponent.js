@@ -3,10 +3,6 @@ import './FooterComponent.css';
 
 class FooterComponent extends Component {
 
-    constructor(props, context) {
-        super(props, context);
-    }
-
 
     render() {
         return (

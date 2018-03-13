@@ -1,0 +1,34 @@
+/* Add a dark background color with a little bit see-through */
+.linklist ul {
+    margin-bottom: 0 !important;
+    background-color: #2d2d30 !important;
+    border: 0 !important;
+    font-size: 11px !important;
+    letter-spacing: 4px !important;
+    opacity:0.9 !important;
+    border-radius: 0 !important;
+    z-index: 9999 !important;
+
+}
+
+
+/* Add a gray color to all navbar links */
+.linklist li a, .nav-link {
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+linklist li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+linklist li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+linklist .nav-link {
+    border-color: transparent !important;
+}

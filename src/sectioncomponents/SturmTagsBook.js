@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import poem1 from './img/poem_1.jpg';
-import './App.css';
+import poem1 from '../img/poem_1.jpg';
 
-class SturmTags extends Component {
+class SturmTagsBook extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -33,16 +32,16 @@ class SturmTags extends Component {
 
     render() {
         return (
-            <div className="flex-container">
-                <body>
-                <article className="article">
-                    <img className="centralimg" src={poem1} alt={"storm-tags"}/>
+            <div id="sturmtags" className="flex-container">
+
+                <article>
+                    <img className="img-responsive" src={poem1} alt={"storm-tags"}/>
                     <br/>
                 </article>
-                </body>
+
             </div>
         );
     }
 }
 
-export default SturmTags;
+export default SturmTagsBook;
