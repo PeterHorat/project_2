@@ -5,10 +5,6 @@ import StaffNewsComponent from "./StaffNewsComponent";
 
 class ContactComponent extends Component {
 
-    constructor(props, context) {
-        super(props, context);
-    }
-
     render() {
         return (
             <div id="contact" className="container">

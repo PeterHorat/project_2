@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
 import './TourDatesComponent.css';
-import {Button} from 'react-bootstrap';
-import {Modal} from 'react-bootstrap';
-import {Popover} from 'react-bootstrap';
-import {Tooltip} from 'react-bootstrap';
-import {OverlayTrigger} from 'react-bootstrap';
+import {Button, Modal, OverlayTrigger, Popover, Tooltip} from 'react-bootstrap';
 import holz from '../img/holz.jpg';
-import TicketOrderComponent from "./TicketOrderComponent.js";
 
 class TourDatesComponent extends Component {
 
@@ -39,7 +34,7 @@ class TourDatesComponent extends Component {
         );
         const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
         return (
-            <div  id="tour" className="container">
+            <div id="tour" className="container">
                 <div className="bg-1">
                     <div>
                         <h3 className="text-center">TOUR DATES</h3>

@@ -10,7 +10,6 @@ import ContactComponent from "./sectioncomponents/ContactComponent.js";
 import GoogleMapComponent from "./sectioncomponents/GoogleMapComponent.js";
 import FooterComponent from "./sectioncomponents/FooterComponent.js";
 import BooksComponent from "./sectioncomponents/BooksComponent.js";
-import SturmTagsBook from "./sectioncomponents/SturmTagsBook";
 
 
 class App extends Component {

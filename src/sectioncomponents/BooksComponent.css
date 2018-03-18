@@ -32,3 +32,25 @@ linklist li.active a {
 linklist .nav-link {
     border-color: transparent !important;
 }
+
+.bg-2 {
+    /*padding: 80px 120px;*/
+/*    background: #2d2d30;
+    color: #bdbdbd;*/
+}
+
+.bg-2 h3 {
+    color: #fff;
+}
+
+.bg-2 p {
+    font-style: italic;
+}
+
+.booktext {
+    font-size: 40px;
+}
+
+.bookimg {
+    horizontal-align: center;
+}

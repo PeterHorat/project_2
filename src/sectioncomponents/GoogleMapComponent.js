@@ -10,10 +10,6 @@ class GoogleMapComponent extends Component {
         zoom: 11,
     };
 
-    constructor(props, context) {
-        super(props, context);
-    }
-
 
     render() {
         return (

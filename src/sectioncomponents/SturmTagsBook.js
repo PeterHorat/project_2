@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import poem1 from '../img/poem_1.jpg';
+import ImageComponent from "./ImageComponent.js";
 
 class SturmTagsBook extends Component {
     constructor(props, context) {
@@ -32,13 +32,9 @@ class SturmTagsBook extends Component {
 
     render() {
         return (
-            <div id="sturmtags" className="flex-container">
-
-                <article>
-                    <img className="img-responsive" src={poem1} alt={"storm-tags"}/>
+            <div id="sturmtags">
+                    <ImageComponent/>
                     <br/>
-                </article>
-
             </div>
         );
     }
