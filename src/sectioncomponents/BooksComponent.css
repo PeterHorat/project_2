@@ -5,12 +5,11 @@
     border: 0 !important;
     font-size: 11px !important;
     letter-spacing: 4px !important;
-    opacity:0.9 !important;
+    opacity: 0.9 !important;
     border-radius: 0 !important;
     z-index: 9999 !important;
 
 }
-
 
 /* Add a gray color to all navbar links */
 .linklist li a, .nav-link {
@@ -25,7 +24,7 @@ linklist li a:hover {
 /* The active link */
 linklist li.active a {
     color: #fff !important;
-    background-color:#29292c !important;
+    background-color: #29292c !important;
 }
 
 /* Remove border color from the collapsible button */
@@ -34,9 +33,9 @@ linklist .nav-link {
 }
 
 .bg-2 {
-    /*padding: 80px 120px;*/
-/*    background: #2d2d30;
-    color: #bdbdbd;*/
+    padding: 10px 12px;
+    background: #2d2d30;
+    color: #bdbdbd;
 }
 
 .bg-2 h3 {
@@ -45,6 +44,25 @@ linklist .nav-link {
 
 .bg-2 p {
     font-style: italic;
+}
+/*
+
+.bg-2 ul {
+    margin: auto;
+    width: 66%;
+    border: 3px solid green;
+    padding: 10px;
+}
+.bg-2 li {
+    text-align: left;
+}
+*/
+
+
+.bg-2 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .booktext {

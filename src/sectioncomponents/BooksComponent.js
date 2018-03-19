@@ -7,6 +7,7 @@ import Friends from '../Friends.js';
 import News from '../News.js';
 import "../video-react.css";
 import book from '../img/book_icon.gif';
+import { Row, Col } from 'react-bootstrap';
 
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 
@@ -64,15 +65,25 @@ class BooksComponent extends Component {
                     <Router>
                         <div className="list-group">
                             <ul className="nav">
-                                <li><Link className="list-group-item" to="/sturmtags"><span
-                                    class="glyphicon glyphicon-book"></span> Stormtags</Link>
-                                </li>
-                                <li><Link className="list-group-item" to="/friends"><span
-                                    class="glyphicon glyphicon-book"></span> Friends</Link></li>
-                                <li><Link className="list-group-item" to="/news"><span
-                                    class="glyphicon glyphicon-book"></span> News</Link></li>
-                                <li><Link className="list-group-item" to="/topics"><span
-                                    class="glyphicon glyphicon-book"></span> Topics</Link></li>
+                                <Row className="show-grid">
+                                    <Col xs={10} xsOffset={1}md={4} mdOffset={4}>
+                                        <li><Link className="list-group-item" to="/sturmtags"><span
+                                            class="glyphicon glyphicon-book"></span> Stormtags</Link>
+                                        </li>
+                                    </Col>
+                                    <Col xs={10} xsOffset={1}md={4} mdOffset={4}>
+                                        <li><Link className="list-group-item" to="/friends"><span
+                                            class="glyphicon glyphicon-book"></span> Friends</Link></li>
+                                    </Col>
+                                    <Col xs={10} xsOffset={1}md={4} mdOffset={4}>
+                                        <li><Link className="list-group-item" to="/news"><span
+                                            class="glyphicon glyphicon-book"></span> News</Link></li>
+                                    </Col>
+                                    <Col xs={10} xsOffset={1}md={4} mdOffset={4}>
+                                        <li><Link className="list-group-item" to="/topics"><span
+                                            class="glyphicon glyphicon-book"></span> Topics</Link></li>
+                                    </Col>
+                                </Row>
                             </ul>
                             <hr/>
                             <div>
