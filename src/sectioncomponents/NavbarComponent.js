@@ -6,7 +6,7 @@ import {Navbar} from 'react-bootstrap';
 import {NavItem} from 'react-bootstrap';
 import {NavDropdown} from 'react-bootstrap';
 import {MenuItem} from 'react-bootstrap';
-import logo from '../img/logo.png';
+import logo from '../img/sleeping_dog_blue_2.gif';
 
 class NavbarComponent extends Component {
 

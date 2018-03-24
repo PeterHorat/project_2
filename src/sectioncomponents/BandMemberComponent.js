@@ -38,8 +38,8 @@ class BandMemberComponent extends Component {
         return (
             <div>
                 <p><strong>{this.props.name}</strong></p><br/>
-                <a onClick={this.handleIsOpenCollapse}>
-                    <img className='img-circle person' src={this.props.imgsource} alt="Random Name"/>
+                <a id="bandmember" onClick={this.handleIsOpenCollapse}>
+                    <img className='person' src={this.props.imgsource} alt="Random Name"/>
                 </a>
                 <Collapse isOpened={isOpened}>
                     <div className="text-dark">
