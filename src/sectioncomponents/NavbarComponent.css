@@ -1,57 +1,76 @@
-.nav-tabs li a {
-    color: #777;
+/*navbar items*/
+nav#band-navbar.band-navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px;
+    letter-spacing: 4px;
+    opacity: 0.9;
+    border-radius: 0;
+    z-index: 9999;
+    margin-right: 0px;
 }
 
-/* Add a dark background color with a little bit see-through */
-.navbar {
-    margin-bottom: 0 !important;
-    background-color: #2d2d30 !important;
-    border: 0 !important;
-    font-size: 11px !important;
-    letter-spacing: 4px !important;
-    opacity:0.9 !important;
-    border-radius: 0 !important;
-    z-index: 9999 !important;
-
+/*search btn*/
+.band-search-btn.btn {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    opacity: 0.9;
+    margin-right: 0px;
 }
 
-.navbar-collapse {
-    margin-right: 40px !important;
+/*search input*/
+.band-search-input.form-control {
+    margin-bottom: 0;
+    color: #777777;
+    background-color: white;
+    border: 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    border-radius: 0;
+    margin-right: 0px;
 }
 
-/* Add a gray color to all navbar links */
-.navbar li a, .navbar .navbar-brand {
-    color: #d5d5d5 !important;
+.band-search-input.form-control:hover, .band-search-input.form-control:focus {
+    color: black;
+    border: 1px solid #333;
 }
 
-/* On hover, the links will turn white */
-.navbar-nav li a:hover {
-    color: #fff !important;
-}
-
-/* The active link */
-.navbar-nav li.active a {
-    color: #fff !important;
-    background-color:#29292c !important;
-}
-
-/* Remove border color from the collapsible button */
-.navbar-default .navbar-toggle {
-    border-color: transparent !important;
+.band-search-input.form-control:active {
+    color: #d5d5d5;
+    background-color: #2d2d30;
 }
 
 /* Dropdown */
-.open .dropdown-toggle {
-    color: #fff ;
-    background-color: #555 !important;
+ .open .dropdown-toggle {
+     margin-bottom: 0;
+     background-color: #2d2d30;
+     border: 0;
+     font-size: 11px;
+     letter-spacing: 4px;
+     opacity: 0.9;
+     border-radius: 0;
+     z-index: 9999;
+     margin-right: 0px;
+ }
+
+/* Dropdown links */
+.dropdown-menu li{
+
 }
 
 /* Dropdown links */
-.dropdown-menu li a {
-    color: #000 !important;
-}
+ .dropdown-menu li a {
+     background-color: #e5e5e5;
+     font-size: 11px;
+     letter-spacing: 2px;
+     opacity: 0.9;
+ }
 
 /* On hover, the dropdown links will turn red */
 .dropdown-menu li a:hover {
-    background-color: red !important;
-}
+    background-color:#777777;
+    color: white ;
+ }

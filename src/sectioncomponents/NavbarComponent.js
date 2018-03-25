@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 
 import './NavbarComponent.css';
-import {Nav} from 'react-bootstrap';
-import {Navbar} from 'react-bootstrap';
-import {NavItem} from 'react-bootstrap';
-import {NavDropdown} from 'react-bootstrap';
-import {MenuItem} from 'react-bootstrap';
+import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from 'react-bootstrap';
 import logo from '../img/sleeping_dog_blue_2.gif';
 
 class NavbarComponent extends Component {
@@ -24,15 +20,17 @@ class NavbarComponent extends Component {
     render() {
         return (
             <div className='container'>
-                <Navbar className='container-fluid' collapseOnSelect>
-                    <Navbar.Brand>
-                        <a href="#brand"><img src={logo} alt="Random Name"/></a>
-                    </Navbar.Brand>
-                    <Navbar.Toggle/>
+                <Navbar id="band-navbar" className="band-navbar" inverse collapseOnSelect>
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a href="#brand"><img src={logo} alt="Random Name"/></a>
+                        </Navbar.Brand>
+                        <Navbar.Toggle/>
+                    </Navbar.Header>
                     <Navbar.Collapse>
-                        <Nav bsStyle="tabs" activeKey="1" pullRight
+                        <Nav activeKey="1"
                              onSelect={k => this.handleSelectNavigation(k)}>
-                            <NavItem eventKey={1} href="#home">
+                            <NavItem className="active" eventKey={1} href="#home">
                                 HOME
                             </NavItem>
                             <NavItem eventKey={2} href="#band">
@@ -47,16 +45,24 @@ class NavbarComponent extends Component {
                             <NavItem eventKey={5} href="#books">
                                 BOOKS
                             </NavItem>
-                            <NavDropdown eventKey={6} title="MORE" id="nav-dropdown">
+                            <NavDropdown eventKey={6} title="MORE" >
                                 <MenuItem eventKey="5.1">Subitem 1</MenuItem>
                                 <MenuItem eventKey="5.2">Subitem 2</MenuItem>
                                 <MenuItem eventKey="5.3">Subitem 3</MenuItem>
                                 <MenuItem divider/>
                                 <MenuItem eventKey="5.4">Separated link</MenuItem>
                             </NavDropdown>
-                            <NavItem eventKey="6" disabled>
-                                <span className="glyphicon glyphicon-search"></span>
-                            </NavItem>
+                        </Nav>
+                        <Nav pullRight>
+
+                            <Navbar.Form pullLeft>
+                                <FormGroup>
+                                    <FormControl className="band-search-input" type="text" placeholder="Search"/>
+                                </FormGroup>{' '}
+                                <Button eventKey={6} href="#tour" className="band-search-btn" bsStyle="primary"
+                                        type="submit"><span
+                                    className="glyphicon glyphicon-search"></span></Button>
+                            </Navbar.Form>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

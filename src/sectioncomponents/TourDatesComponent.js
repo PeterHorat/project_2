@@ -42,13 +42,13 @@ class TourDatesComponent extends Component {
                             tickets!</p>
 
                         <ul className="list-group">
-                            <li className="list-group-item">September <span
+                            <li id="band-list-group-first" className="list-group-item">September <span
                                 className="label label-danger">Sold Out!</span>
                             </li>
                             <li className="list-group-item">October <span
                                 className="label label-danger">Sold Out!</span>
                             </li>
-                            <li className="list-group-item">November <span className="badge">3</span></li>
+                            <li id="band-list-group-last" className="list-group-item">November <span className="badge">3</span></li>
                         </ul>
 
                         <div className="row text-center">
@@ -57,7 +57,7 @@ class TourDatesComponent extends Component {
                                     <img src={holz} alt="Paris"/>
                                     <p><strong>Paris</strong></p>
                                     <p>Fri. 27 November 2015</p>
-                                    <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+                                    <Button className="band-ticket-button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
                                         Buy Tickets
                                     </Button>
                                 </div>
@@ -67,7 +67,7 @@ class TourDatesComponent extends Component {
                                     <img src={holz} alt="New York"/>
                                     <p><strong>New York</strong></p>
                                     <p>Sat. 28 November 2015</p>
-                                    <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+                                    <Button  className="band-ticket-button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
                                         Buy Tickets
                                     </Button>
                                 </div>
@@ -77,7 +77,7 @@ class TourDatesComponent extends Component {
                                     <img src={holz} alt="San Francisco"/>
                                     <p><strong>San Francisco</strong></p>
                                     <p>Sun. 29 November 2015</p>
-                                    <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+                                    <Button  className="band-ticket-button" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
                                         Buy Tickets
                                     </Button>
                                 </div>
