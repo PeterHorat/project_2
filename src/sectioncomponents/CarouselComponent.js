@@ -34,7 +34,7 @@ class CarouselComponent extends Component {
         const {index, direction} = this.state;
 
         return (
-            <div className='container band-carousel-container'>
+            <div id="band-carousel" className='container band-carousel-container'>
                 <Carousel activeIndex={index}
                           direction={direction}
                           onSelect={this.handleSelectCarousel}>

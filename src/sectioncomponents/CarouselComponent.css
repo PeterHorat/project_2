@@ -1,9 +1,17 @@
-.band-carousel-container {
+#band-carousel.band-carousel-container {
     padding-top: 60px;
 }
+
+@media screen and (min-width: 480px) {
+    #band-carousel.band-carousel-container {
+        width: 55%;
+        height: 55%;
+    }
+}
+
 
 
 div.item.active img {
     margin: auto;
- }
+}
 
