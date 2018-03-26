@@ -8,9 +8,6 @@ import geiss from '../img/geiss_sw.jpg';
 import wald from '../img/wald_sw.jpg';
 
 
-
-
-
 class CarouselComponent extends Component {
 
     constructor(props, context) {
@@ -37,26 +34,26 @@ class CarouselComponent extends Component {
         const {index, direction} = this.state;
 
         return (
-            <div className='container'>
+            <div className='container band-carousel-container'>
                 <Carousel activeIndex={index}
                           direction={direction}
                           onSelect={this.handleSelectCarousel}>
                     <Carousel.Item>
-                        <img width={1200} height={900} alt="1200x900" src={toffee_sw}/>
+                        <img src={toffee_sw}/>
                         <Carousel.Caption>
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={1200} height={900} alt="1200x900" src={geiss}/>
+                        <img src={geiss}/>
                         <Carousel.Caption>
                             <h3>Second slide label</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={1200} height={900} alt="1200x900" src={wald}/>
+                        <img src={wald}/>
                         <Carousel.Caption>
                             <h3>Third slide label</h3>
                             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>

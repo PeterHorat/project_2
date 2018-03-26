@@ -1,1 +1,9 @@
+.band-carousel-container {
+    padding-top: 60px;
+}
+
+
+div.item.active img {
+    margin: auto;
+ }
 

@@ -20,7 +20,7 @@ class NavbarComponent extends Component {
     render() {
         return (
             <div className='container'>
-                <Navbar id="band-navbar" className="band-navbar" inverse collapseOnSelect>
+                <Navbar id="band-navbar" className="band-navbar" inverse collapseOnSelect fixedTop>
                     <Navbar.Header>
                         <Navbar.Brand>
                             <a href="#brand"><img src={logo} alt="Random Name"/></a>
