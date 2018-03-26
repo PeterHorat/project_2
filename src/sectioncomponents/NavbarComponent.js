@@ -46,11 +46,11 @@ class NavbarComponent extends Component {
                                 BOOKS
                             </NavItem>
                             <NavDropdown eventKey={6} title="MORE" >
-                                <MenuItem eventKey="5.1">Subitem 1</MenuItem>
-                                <MenuItem eventKey="5.2">Subitem 2</MenuItem>
-                                <MenuItem eventKey="5.3">Subitem 3</MenuItem>
+                                <MenuItem className="band-dropdown-menu-item" eventKey="5.1">Subitem 1</MenuItem>
+                                <MenuItem className="band-dropdown-menu-item" eventKey="5.2">Subitem 2</MenuItem>
+                                <MenuItem className="band-dropdown-menu-item" eventKey="5.3">Subitem 3</MenuItem>
                                 <MenuItem divider/>
-                                <MenuItem eventKey="5.4">Separated link</MenuItem>
+                                <MenuItem className="band-dropdown-menu-item" eventKey="5.4">Separated link</MenuItem>
                             </NavDropdown>
                         </Nav>
                         <Nav pullRight>

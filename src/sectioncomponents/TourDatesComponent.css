@@ -29,10 +29,10 @@
 }
 
 /* Remove border and add padding to thumbnails */
-.thumbnail{
-    padding: 0 0 15px 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
+div.thumbnail{
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
 }
 
 /* Black buttons with extra padding and without rounded borders */
@@ -51,11 +51,18 @@
     color: #000;
 }
 
-.modal-header, h4, .close {
-    background-color: #333 !important;
-    color: #fff !important;
-    text-align: center !important;
-    font-size: 30px !important;
+.modal-header, h4.modal-title {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+}
+
+button.close {
+    background-color: #333;
+    color: #e5e5e5;
+    text-align: center;
+    font-size: 20px;
 }
 
 .modal-header, .modal-body {

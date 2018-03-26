@@ -62,7 +62,7 @@ nav#band-navbar.band-navbar {
 }
 
 /* Dropdown links */
- .dropdown-menu li a {
+ .dropdown-menu li.band-dropdown-menu-item a {
      background-color: #e5e5e5;
      font-size: 11px;
      letter-spacing: 2px;
@@ -70,7 +70,7 @@ nav#band-navbar.band-navbar {
  }
 
 /* On hover, the dropdown links will turn red */
-.dropdown-menu li a:hover {
+.dropdown-menu li.band-dropdown-menu-item a:hover {
     background-color:#777777;
-    color: white ;
+    color: black ;
  }
