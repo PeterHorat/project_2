@@ -1,5 +1,9 @@
+#tour.tour_container {
+    padding-top: 80px;
+}
+
 .bg-1 {
-    padding: 80px 60px;
+    padding: 10px 60px;
     background: #2d2d30;
     color: #bdbdbd;
 }

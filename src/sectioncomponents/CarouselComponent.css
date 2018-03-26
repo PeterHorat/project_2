@@ -1,9 +1,9 @@
-#band-carousel.band-carousel-container {
-    padding-top: 60px;
+#home.band-carousel-container {
+    padding-top: 80px;
 }
 
 @media screen and (min-width: 480px) {
-    #band-carousel.band-carousel-container {
+    #home.band-carousel-container {
         width: 55%;
         height: 55%;
     }

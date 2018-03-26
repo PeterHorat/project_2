@@ -34,7 +34,7 @@ class TourDatesComponent extends Component {
         );
         const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
         return (
-            <div id="tour" className="container">
+            <div id="tour" className="container tour_container">
                 <div className="bg-1">
                     <div>
                         <h3 className="text-center">TOUR DATES</h3>

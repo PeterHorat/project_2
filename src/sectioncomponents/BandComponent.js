@@ -12,9 +12,8 @@ import {BrowserRouter as Router,} from 'react-router-dom'
 class BandComponent extends Component {
 
     render() {
-
         return (
-            <div id="band" className="container text-center">
+            <div id="band" className="band_container container text-center">
                 <h3>Sleeping Dog</h3>
                 <p>We love music!</p>
                 <p>We have created a fictional band website. Lorem ipsum..</p>
