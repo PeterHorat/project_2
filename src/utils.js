@@ -16,3 +16,7 @@ function logError(error) {
 function readResponseAsJSON(response) {
     return response.json();
 }
+
+// very wide to provide as full screen feeling
+export const skyAndGroundWidth = 5000;
+

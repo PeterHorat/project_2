@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import ReactSmoothScroll from 'react-smooth-scroll';
 import PropTypes from 'prop-types';
+import {getCanvasPosition} from './utils/formulas';
 
 import CarouselComponent from './sectioncomponents/CarouselComponent.js';
 import NavbarComponent from './sectioncomponents/NavbarComponent.js';
@@ -16,6 +17,16 @@ import Canvas from './components/Canvas';
 
 
 class App extends Component {
+    componentDidMount() {
+        const self = this;
+        setInterval(() => {
+            self.props.moveObjects(self.canvasMousePosition);
+        }, 10);
+    }
+
+    trackMouse(event) {
+        this.canvasMousePosition = getCanvasPosition(event);
+    }
 
 
     render() {
@@ -28,8 +39,11 @@ class App extends Component {
                     </head>
                     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
                     <NavbarComponent/>
+                    <Canvas
+                        angle={this.props.angle}
+                        trackMouse={event => (this.trackMouse(event))}
+                    />
                     <CarouselComponent/>
-                    <Canvas />
                     <BandComponent/>
                     <TourDatesComponent/>
                     <ContactComponent/>
@@ -45,6 +59,8 @@ class App extends Component {
 
 App.propTypes = {
     message: PropTypes.string.isRequired,
+    angle: PropTypes.number.isRequired,
+    moveObjects: PropTypes.func.isRequired,
 };
 
 export default App;
