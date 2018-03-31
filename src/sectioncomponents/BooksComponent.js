@@ -58,7 +58,7 @@ class BooksComponent extends Component {
     render() {
         return (
 
-            <div id="books" className="container text-center">
+            <div id="books" className="books_container container text-center">
                 <img src={book}/>
                 <h3 className="text-center">Books</h3>
                 <div className="bg-2">

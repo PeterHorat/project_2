@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css';
+import './ContactComponent.css';
 import StaffNewsComponent from "./StaffNewsComponent";
 
 
@@ -7,7 +8,7 @@ class ContactComponent extends Component {
 
     render() {
         return (
-            <div id="contact" className="container">
+            <div id="contact" className="contact_container container">
                 <h3 className="text-center">Contact</h3>
                 <p className="text-center"><em>We love our fans!</em></p>
                 <div className="row test">
