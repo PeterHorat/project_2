@@ -30,6 +30,11 @@ Auth0.configure({
 
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.shoot = this.shoot.bind(this);
+    }
+
     componentDidMount() {
         const self = this;
 
@@ -89,6 +94,10 @@ class App extends Component {
         this.canvasMousePosition = getCanvasPosition(event);
     }
 
+    shoot() {
+        this.props.shoot(this.canvasMousePosition);
+    }
+
 
     render() {
         return (
@@ -100,13 +109,6 @@ class App extends Component {
                     </head>
                     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
                     <NavbarComponent/>
-
-                    <CarouselComponent/>
-                    <BandComponent/>
-                    <TourDatesComponent/>
-                    <ContactComponent/>
-                    <GoogleMapComponent/>
-                    <BooksComponent/>
                     <Canvas
                         angle={this.props.angle}
                         currentPlayer={this.props.currentPlayer}
@@ -114,7 +116,15 @@ class App extends Component {
                         players={this.props.players}
                         startGame={this.props.startGame}
                         trackMouse={event => (this.trackMouse(event))}
+                        shoot={this.shoot}
                     />
+                    <CarouselComponent/>
+                    <BandComponent/>
+                    <TourDatesComponent/>
+                    <ContactComponent/>
+                    <GoogleMapComponent/>
+                    <BooksComponent/>
+
                     <FooterComponent/>
                     </body>
                 </div>
@@ -140,6 +150,7 @@ App.propTypes = {
     }).isRequired,
     moveObjects: PropTypes.func.isRequired,
     startGame: PropTypes.func.isRequired,
+    shoot: PropTypes.func.isRequired,
 };
 
 

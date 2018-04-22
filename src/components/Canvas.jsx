@@ -16,6 +16,7 @@ import Login from './Login';
 import { signIn } from 'auth0-web';
 
 
+
 const Canvas = (props) => {
     const gameHeight = 1200;
     const viewBox = [window.innerWidth / -2, 100 - gameHeight, window.innerWidth, gameHeight + 135];
@@ -27,6 +28,7 @@ const Canvas = (props) => {
                 preserveAspectRatio="xMaxYMax none"
                 onMouseMove={props.trackMouse}
                 viewBox={viewBox}
+                onClick={props.shoot}
             >
                 <defs>
                     <filter id="shadow">
@@ -35,6 +37,12 @@ const Canvas = (props) => {
                 </defs>
                 <Sky />
                 <Ground />
+                {props.gameState.cannonBalls.map(cannonBall => (
+                    <CannonBall
+                        key={cannonBall.id}
+                        position={cannonBall.position}
+                    />
+                ))}
                 <CannonPipe rotation={props.angle} />
                 <CannonBase />
                 <CurrentScore score={15} />
@@ -72,6 +80,7 @@ Canvas.propTypes = {
             id: PropTypes.number.isRequired,
         })).isRequired,
     }).isRequired,
+    shoot: PropTypes.func.isRequired,
 
 };
 
