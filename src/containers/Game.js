@@ -4,7 +4,7 @@ import App from '../App';
 
 import {
     leaderboardLoaded, loggedIn,
-    moveObjects, startGame, shoot
+    moveObjects, startGame, testButton, shoot
 } from '../actions/index';
 
 
@@ -26,6 +26,9 @@ const mapDispatchToProps = dispatch => ({
     },
     moveObjects: (mousePosition) => {
         dispatch(moveObjects(mousePosition));
+    },
+    testButton: () => {
+        dispatch(testButton());
     },
     startGame: () => {
         dispatch(startGame());

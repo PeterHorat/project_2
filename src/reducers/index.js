@@ -1,10 +1,11 @@
 import moveObjects from './moveObjects';
 import startGame from './startGame';
 import shoot from './shoot';
+import testButton from './testButton';
 
 import {
     LEADERBOARD_LOADED, LOGGED_IN,
-    MOVE_OBJECTS, SHOOT, START_GAME
+    MOVE_OBJECTS, SHOOT, START_GAME, TEST_BUTTON,
 } from '../actions';
 
 
@@ -12,6 +13,7 @@ import {
 
 const initialGameState = {
     started: false,
+    test: false,
     kills: 0,
     lives: 3,
     flyingObjects: [],
@@ -19,12 +21,16 @@ const initialGameState = {
     currentPlayer: null,
     players: null,
     cannonBalls: [],
+    intervall: 10,
 };
+
 
 const initialState = {
     angle: 45,
     gameState: initialGameState,
 };
+
+
 
 function reducer(state = initialState, action) {
     switch (action.type) {
@@ -42,6 +48,8 @@ function reducer(state = initialState, action) {
             return moveObjects(state, action);
         case START_GAME:
             return startGame(state, initialGameState);
+        case TEST_BUTTON:
+            return testButton(state, initialGameState);
         case SHOOT:
             return shoot(state, action);
         default:

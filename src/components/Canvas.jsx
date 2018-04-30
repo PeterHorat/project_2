@@ -10,6 +10,7 @@ import FlyingObject from './FlyingObject';
 import Leaderboard from './Leaderboard';
 import Heart from './Heart';
 import StartGame from './StartGame';
+import TestButton from './TestButton'
 import Title from './Title';
 import './Canvas.css';
 import Login from './Login';
@@ -20,6 +21,14 @@ import { signIn } from 'auth0-web';
 const Canvas = (props) => {
     const gameHeight = 1200;
     const viewBox = [window.innerWidth / -2, 100 - gameHeight, window.innerWidth, gameHeight + 135];
+    const lives = [];
+    for (let i = 0; i < props.gameState.lives; i++) {
+        const heartPosition = {
+            x: -180 - (i * 70),
+            y: 35
+        };
+        lives.push(<Heart key={i} position={heartPosition}/>);
+    }
 
     return (
         <div id="contact" className="canvas_container">
@@ -45,10 +54,11 @@ const Canvas = (props) => {
                 ))}
                 <CannonPipe rotation={props.angle} />
                 <CannonBase />
-                <CurrentScore score={15} />
+                <CurrentScore score={props.gameState.kills} />
 
                 { ! props.gameState.started &&
                 <g>
+                    <TestButton onClick={() => props.testButton()} intervall={props.gameState.intervall} />
                     <StartGame onClick={() => props.startGame()} />
                     <Title />
                     <Leaderboard currentPlayer={props.currentPlayer} authenticate={signIn} leaderboard={props.players} />
@@ -61,6 +71,8 @@ const Canvas = (props) => {
                         position={flyingObject.position}
                     />
                 ))}
+
+                {lives}
 
             </svg>
         </div>
@@ -81,6 +93,7 @@ Canvas.propTypes = {
         })).isRequired,
     }).isRequired,
     shoot: PropTypes.func.isRequired,
+    intervall: PropTypes.number.isRequired,
 
 };
 
