@@ -12,6 +12,7 @@ import ContactComponent from "./sectioncomponents/ContactComponent.js";
 import GoogleMapComponent from "./sectioncomponents/GoogleMapComponent.js";
 import FooterComponent from "./sectioncomponents/FooterComponent.js";
 import BooksComponent from "./sectioncomponents/BooksComponent.js";
+import Video from "./sectioncomponents/Video.js";
 
 import Canvas from './components/Canvas';
 
@@ -119,13 +120,13 @@ class App extends Component {
                         trackMouse={event => (this.trackMouse(event))}
                         shoot={this.shoot}
                     />
+                    <Video/>
                     <CarouselComponent/>
                     <BandComponent/>
                     <TourDatesComponent/>
                     <ContactComponent/>
                     <GoogleMapComponent/>
                     <BooksComponent/>
-
                     <FooterComponent/>
                     </body>
                 </div>
