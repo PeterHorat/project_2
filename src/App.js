@@ -110,6 +110,14 @@ class App extends Component {
                     </head>
                     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
                     <NavbarComponent/>
+
+                    <Video/>
+                    <CarouselComponent/>
+                    <BandComponent/>
+                    <TourDatesComponent/>
+                    <ContactComponent/>
+                    <GoogleMapComponent/>
+                    <BooksComponent/>
                     <Canvas
                         angle={this.props.angle}
                         currentPlayer={this.props.currentPlayer}
@@ -120,13 +128,6 @@ class App extends Component {
                         trackMouse={event => (this.trackMouse(event))}
                         shoot={this.shoot}
                     />
-                    <Video/>
-                    <CarouselComponent/>
-                    <BandComponent/>
-                    <TourDatesComponent/>
-                    <ContactComponent/>
-                    <GoogleMapComponent/>
-                    <BooksComponent/>
                     <FooterComponent/>
                     </body>
                 </div>

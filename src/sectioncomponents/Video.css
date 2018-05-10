@@ -1,6 +1,7 @@
 #video.video_container {
     padding-top: 160px;
     margin-top: 80px;
+    height:600px;
 }
 
 .player-wrapper {

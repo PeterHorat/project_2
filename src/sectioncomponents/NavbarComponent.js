@@ -30,27 +30,30 @@ class NavbarComponent extends Component {
                     <Navbar.Collapse>
                         <Nav activeKey="1"
                              onSelect={k => this.handleSelectNavigation(k)}>
-                            <NavItem className="active" eventKey={1} href="#home">
+                            <NavItem className="active" eventKey={1} href="#video">
+                                VIDEO
+                            </NavItem>
+                            <NavItem eventKey={2} href="#home">
                                 HOME
                             </NavItem>
-                            <NavItem eventKey={2} href="#band">
+                            <NavItem eventKey={32} href="#band">
                                 BAND
                             </NavItem>
-                            <NavItem eventKey={3} href="#tour">
+                            <NavItem eventKey={4} href="#tour">
                                 TOUR
                             </NavItem>
-                            <NavItem eventKey={4} href="#contact">
+                            <NavItem eventKey={5} href="#contact">
                                 CONTACT
                             </NavItem>
-                            <NavItem eventKey={5} href="#books">
+                            <NavItem eventKey={6} href="#books">
                                 BOOKS
                             </NavItem>
-                            <NavDropdown eventKey={6} title="MORE" >
-                                <MenuItem className="band-dropdown-menu-item" eventKey="5.1">Subitem 1</MenuItem>
-                                <MenuItem className="band-dropdown-menu-item" eventKey="5.2">Subitem 2</MenuItem>
-                                <MenuItem className="band-dropdown-menu-item" eventKey="5.3">Subitem 3</MenuItem>
+                            <NavDropdown eventKey={7} title="MORE" >
+                                <MenuItem className="band-dropdown-menu-item" eventKey="7.1">Subitem 1</MenuItem>
+                                <MenuItem className="band-dropdown-menu-item" eventKey="7.2">Subitem 2</MenuItem>
+                                <MenuItem className="band-dropdown-menu-item" eventKey="7.3">Subitem 3</MenuItem>
                                 <MenuItem divider/>
-                                <MenuItem className="band-dropdown-menu-item" eventKey="5.4">Separated link</MenuItem>
+                                <MenuItem className="band-dropdown-menu-item" eventKey="7.4">Separated link</MenuItem>
                             </NavDropdown>
                         </Nav>
                         <Nav pullRight>
